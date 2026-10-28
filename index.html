@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Image Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"rel="stylesheet" />
+</head>
+<body>
+  <div class="wrapper">
+    <div class="flex-container">
+      <div class="controls">
+        <div class="heading">
+          <i class="ri-sparkling-fill"></i>
+          <h2>AI Image Generator</h2>
+        </div>
+
+       <div class="prompt-container">
+        <textarea name="" id="promptInput" class="form-input" placeholder="Enter your image prompt"></textarea>
+
+        <div class="example-prompts">
+          <p class="example-label">Hints prompts:</p>
+          <div class="example-chips">
+            <span
+            class="example-chip"
+            onclick="useExamplePrompt('A futuristic cityspace with flying cars and neon lights')"
+            >Futuristic cityspace</span>
+              <span
+            class="example-chip"
+            onclick="useExamplePrompt('A enchanted forest with trees flowers and fairy lights')"
+            >Enchanted forest</span>
+              <span
+            class="example-chip"
+            onclick="useExamplePrompt('A serene beach at sunset with plam trees')"
+            >Beach sunset</span>
+              <span
+            class="example-chip"
+            onclick="useExamplePrompt('A cute cartoon robot in a flower garden')"
+            >Cartoon robot</span>
+             <span
+            class="example-chip"
+            onclick="useExamplePrompt('Space station orbiting a purple planet')"
+            >Space station</span>
+          </div>
+        </div>
+       </div>
+            <div class="setting-container">
+              <div class="select-group">
+                <div class="select-item">
+                  <div class="form-label">Aspect Ratio</div>
+                  <select id="aspectRatio" class="form-select">
+                    <option value="1:1">1:1 (Square)</option>
+                    <option value="16:9">16:9 (Widescreen)</option>
+                    <option value="4:3">4:3 (Classic)</option>
+                    <option value="9:16">9:16 (Portrait)</option>
+                  </select>
+                </div>
+                <div class="select-item">
+                    <div class="form-label">Number of Images</div>
+                    <select id="imageCount" class="form-select">
+                      <option value="1">1 Images</option>
+                      <option value="2">2 Images</option>
+                      <option value="3">3 Images</option>
+                      <option value="4">4 Images</option>
+                    </select>
+                </div>
+              </div>
+              <button class="form-button" onclick="generateImages()">
+                <i class="ri-magic-fill"></i>
+                <span class="button-text">Generate Images</span>
+              </button>
+
+              <div class="error-container hidden" id="errorContainer">
+                <p id="errorMessage" class="error-message"></p>
+              </div>
+            </div>
+        </div>
+        <div class="images">
+          <div class="loader hidden" id="loader">
+            <div class="spinner"></div>
+            <p>Generating Images...</p>
+          </div>
+          <div id="output" class="output hidden">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  <script src="first.js"></script>
+</body>
+</html>
